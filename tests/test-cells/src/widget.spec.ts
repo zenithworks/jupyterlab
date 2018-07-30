@@ -451,6 +451,9 @@ describe('cells/widget', () => {
         await CodeCell.execute(widget, session);
         const executionCount = widget.model.executionCount;
         expect(executionCount).to.not.equal(originalCount);
+        expect('timing.execute_reply_started').to.be.ok();
+        expect('timing.execute_reply_sent').to.be.ok();
+        });
       });
     });
   });
